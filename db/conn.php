@@ -1,8 +1,14 @@
 <?php
-    $host = "localhost";
-    $db = "attendance";
-    $user = "root";
-    $pass = "";
+    // $host = "localhost";
+    // $db = "attendance";
+    // $user = "root";
+    // $pass = "";
+    // $charset = "utf8mb4";
+
+    $host = "remotemysql.com";
+    $db = "ULpt6niCy3";
+    $user = "ULpt6niCy3";
+    $pass = "HME1F8ojYO";
     $charset = "utf8mb4";
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
