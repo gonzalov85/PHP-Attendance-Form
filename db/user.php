@@ -14,8 +14,8 @@
                     $sql = "INSERT INTO users (username,password) VALUES (:username,:password)";
                     $stmt = $this->db->prepare($sql);
 
-                    $stmt->bindparam(':fname',$username);
-                    $stmt->bindparam(':lname',$new_password);
+                    $stmt->bindparam(':username',$username);
+                    $stmt->bindparam(':password',$new_password);
 
                     $stmt->execute();
                     return true;
