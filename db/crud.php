@@ -57,12 +57,17 @@
         }
         }
         public function getAttendeeDetails($id){
-            $sql = "SELECT * FROM `attendee`a INNER JOIN specialties s ON a.specialty_id = s.specialty_id WHERE attendee_id = :id";
-            $stmt = $this->db->prepare($sql);
-            $stmt->bindparam(':id',$id);
-            $stmt->execute();
-            $result = $stmt->fetch();
-            return $result;
+            try {
+                $sql = "SELECT * FROM `attendee`a INNER JOIN specialties s ON a.specialty_id = s.specialty_id WHERE attendee_id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id',$id);
+                $stmt->execute();
+                $result = $stmt->fetch();
+                return $result;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+        }
         }
 
         public function deleteAttendee($id){
